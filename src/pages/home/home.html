@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Facebook Login/User Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+<ion-card>
+  <ion-item>
+    <img block src="{{ loggedInUserDetails && loggedInUserDetails.picture && loggedInUserDetails.picture.data && loggedInUserDetails.picture.data.url ? loggedInUserDetails.picture.data.url :'http://2.bp.blogspot.com/-wazaLZaCE1w/V7BPt3rcy2I/AAAAAAAAAIc/NZRzCy_Ly8UsH93y_wUYlx7wNsgw3lcngCK4B/s1600/Indian-flag-images-free.jpeg'}}" style="width:50px;height:50px;margin-left:auto;margin-right:auto;">
+    <h2 text-center padding-top>{{ loggedInUserDetails && loggedInUserDetails.name ? loggedInUserDetails.name :'Barun'}}</h2>
+    <p text-center>{{ loggedInUserDetails && loggedInUserDetails.email ? loggedInUserDetails.email :'barun08pandit@gmail.com'}}</p>
+  </ion-item>
+</ion-card>  
+<ion-card padding>
+	<button ion-button block outline (click)="socialLogin()">Facebook Login</button>
+	<button ion-button block outline secondary (click)="getUserDetails()">Get User Details</button>
+</ion-card>  
+</ion-content>
